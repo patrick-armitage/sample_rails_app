@@ -54,3 +54,14 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+
+# Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
+# accepted protocols.
+#
+# The default is "tcp://0.0.0.0:9292".
+#
+# bind 'tcp://0.0.0.0:9292'
+bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+# bind 'unix:///var/run/puma.sock?umask=0111'
+# bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
