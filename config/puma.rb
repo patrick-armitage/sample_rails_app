@@ -65,3 +65,6 @@ plugin :tmp_restart
 bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 # bind 'unix:///var/run/puma.sock?umask=0111'
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
+
+pidfile "#{Rails.root}/tmp/pids/puma.pid"
+state_path "#{Rails.root}/tmp/pids/puma.state"
